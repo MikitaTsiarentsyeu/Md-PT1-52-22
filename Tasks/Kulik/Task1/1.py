@@ -1,5 +1,5 @@
-a = 20000
-b = 5
-c = 15
-x=a*((1+(0.15/12)))**60
-print (round (x,2))
+a = int(input("Deposit amount:\n")) 
+b = int(input('Years amount:\n'))
+c = int(input('Procent:\n'))
+x=a*((1+b/100/12)**(c*12))
+print (x)
