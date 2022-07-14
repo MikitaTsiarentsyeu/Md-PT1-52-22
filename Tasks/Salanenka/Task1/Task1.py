@@ -1,3 +1,20 @@
+
+deposit = int (input ('Enter the amount of deposit: \n'))
+rate = int (input ('Enter the interest rate in percent per year: \n'))/100
+term = int (input ('Enter the time period in years: \n'))
+capitalization = input ('Press 1 for monthly capitalization and press 2 for yearly capitalization: \n')
+print (capitalization)
+valueMonthly = deposit*(1+rate/12)**(term*12)
+valueYearly = deposit*(1+rate)**term
+
+if capitalization == '1':
+    print (f'Your total value in {term} years with monthly capitalization will be: {round(valueMonthly, 2)} BYN')
+elif capitalization == '2':
+    print (f'Your total value in {term} years with yearly capitalization will be: {round(valueYearly, 2)} BYN')
+else:
+    print ('Error. Please try again.')
+
+
 #1 вариант
 deposit = 20000
 term = 5*12
