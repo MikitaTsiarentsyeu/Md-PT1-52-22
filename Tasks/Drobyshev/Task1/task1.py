@@ -16,6 +16,7 @@ while True:
     add = input ('Please enter the amount of the monthly deposit, BYN: \n')
     try:
         add = float (add)
+        add >= 0
         break
     except :
         print ('You have entered the letters, try again.') if add.isalpha() else print ('You have entered incomprehensible characters, try again.')
@@ -49,6 +50,6 @@ total_sum = total + sum
 profit = total_sum - add*(month-1) - amount 
 profitability = (profit/(amount+add*(month-1))*100)/term
 
-print ('The amount =', round(total_sum,2) , 'BYN' )
-print ('Profit =' , round(profit,2) ,'BYN')
-print ('The yield was (as a percentage per annum):' , round(profitability,2) , '%')
+print (f'The amount = {total_sum:.2f} BYN' )
+print (f'Profit = {profit:.2f} BYN')
+print (f'The yield was (as a percentage per annum) = {profitability:.2f} %')
