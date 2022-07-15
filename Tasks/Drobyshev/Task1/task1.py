@@ -24,7 +24,10 @@ while True:
     term = input ('Please enter the deposit term, years: \n')
     try:
         term = float (term)
+        result = 1 / term
         break
+    except ZeroDivisionError:
+        print('You have entered the number 0, try again.')
     except :
         print ('You have entered the letters, try again.') if term.isalpha() else print ('You have entered incomprehensible characters, try again.')
             
