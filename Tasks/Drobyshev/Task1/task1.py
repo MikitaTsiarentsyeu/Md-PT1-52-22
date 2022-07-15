@@ -38,10 +38,10 @@ while True:
            
 month = term * 12
 total = amount * (1 + rate/100/12) ** month
-sum = (add * ((1 + rate/100/12) ** month)*(1 + rate/100/12) - add * (1 + rate/100/12)) / (rate/100/12)
+sum = (add * ((1 + rate/100/12) ** (month-1))*(1 + rate/100/12) - add * (1 + rate/100/12)) / (rate/100/12)
 total_sum = total + sum
-profit = total_sum - amount
-profitability = (profit/amount*100)/term
+profit = total_sum - add*(month-1) - amount 
+profitability = (profit/(amount+add*(month-1))*100)/term
 
 print ('The amount =', round(total_sum,2) , 'BYN' )
 print ('Profit =' , round(profit,2) ,'BYN')
