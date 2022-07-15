@@ -32,9 +32,12 @@ while True:
     rate = input ('Please enter the annual interest rate, % : \n')
     try:
         rate = float (rate)
+        result = 1 / rate
         break
-    except :
-        print ('You have entered the letters, try again.') if rate.isalpha() else print ('You have entered incomprehensible characters, try again.')
+    except ZeroDivisionError:
+        print('You have entered the number 0, try again.')
+    except:
+        print ('You have entered the letters, try again.') if rate.isalpha() else print ('You have entered incomprehensible characters, try again.') 
            
 month = term * 12
 total = amount * (1 + rate/100/12) ** month
