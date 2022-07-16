@@ -8,40 +8,51 @@ while True:
     amount = input ('Please enter the amount of the initial payment, BYN: \n')
     try:
         amount = float (amount)
+        assert amount >= 0
         break
+    except AssertionError: 
+        print ('You entered a negative number, please try again.')
     except :
-        print ('You have entered the letters, try again.') if amount.isalpha() else print ('You have entered incomprehensible characters, try again.')
+        print ('You have entered the letters, please try again.') if amount.isalpha() else print ('You have entered incomprehensible characters, please try again.')
 
 while True:
     add = input ('Please enter the amount of the monthly deposit, BYN: \n')
     try:
         add = float (add)
-        add >= 0
+        assert add >= 0
         break
+    except AssertionError: 
+        print ('You entered a negative number, please try again.')
     except :
-        print ('You have entered the letters, try again.') if add.isalpha() else print ('You have entered incomprehensible characters, try again.')
+        print ('You have entered the letters, try again.') if add.isalpha() else print ('You have entered incomprehensible characters, please try again.')
             
 while True:
     term = input ('Please enter the deposit term, years: \n')
     try:
         term = float (term)
         result = 1 / term
+        assert term > 0
         break
+    except AssertionError: 
+        print ('You entered a negative number, please try again.')
     except ZeroDivisionError:
-        print('You have entered the number 0, try again.')
+        print('You have entered the deposit term = 0, please try again.')
     except :
-        print ('You have entered the letters, try again.') if term.isalpha() else print ('You have entered incomprehensible characters, try again.')
+        print ('You have entered the letters, please try again.') if term.isalpha() else print ('You have entered incomprehensible characters, please try again.')
             
 while True:
     rate = input ('Please enter the annual interest rate, % : \n')
     try:
         rate = float (rate)
         result = 1 / rate
+        assert rate > 0
         break
+    except AssertionError: 
+        print ('You entered a negative number, please try again.')
     except ZeroDivisionError:
-        print('You have entered the number 0, try again.')
+        print('You have entered the annual interest rate = 0, please try again.')
     except:
-        print ('You have entered the letters, try again.') if rate.isalpha() else print ('You have entered incomprehensible characters, try again.') 
+        print ('You have entered the letters, please try again.') if rate.isalpha() else print ('You have entered incomprehensible characters, please try again.') 
            
 month = term * 12
 total = amount * (1 + rate/100/12) ** month
