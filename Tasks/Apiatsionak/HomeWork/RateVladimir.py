@@ -1,7 +1,8 @@
 #
-#
+#Interest rate 15%
 
 print('Hello, to calculate income, select the following type of capitalization:')
+print('Interest rate 15%')
 a = int(input('Annual - 1 and Monthly - 2''\n'))
 b = int(input('What amount will you deposit in BYN''\n'))
 c = int(input('How long will you sign the contract in months''\n'))
