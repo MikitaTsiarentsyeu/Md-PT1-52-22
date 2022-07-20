@@ -1,6 +1,8 @@
-a = int(input('1. Enter the amount of deposit (USD): '))
-b = int(input('2. Enter deposit interest rate (%): '))
-c = int(input('3. Enter the deposit term (yers): '))
+import decimal
+
+a = decimal.Decimal(input('1. Enter the amount of deposit (USD): '))
+b = decimal.Decimal(input('2. Enter deposit interest rate (%): '))
+c = decimal.Decimal(input('3. Enter the deposit term (yers): '))
 d = str(input('4. Choose the type of capitalization, type "month" or "year": '))
 
 if d == 'month': 
