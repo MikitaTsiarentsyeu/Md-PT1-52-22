@@ -1,9 +1,12 @@
+import decimal
+
+
 interestRates = [5, 10, 15, 20]
 years = [1, 3, 5, 10]
 periods = [1, 3, 12]
 
-principalAmount = int(input("Please enter your initial deposit amount:"))
-userInterestRate = int(input(f"Please select annual interest % rate from the list {interestRates}:"))/100
+principalAmount = decimal.Decimal(input("Please enter your initial deposit amount:"))
+userInterestRate = decimal.Decimal(input(f"Please select annual interest % rate from the list {interestRates}:"))/100
 userYears = int(input(f"Please select a number of years to keep the deposit in the bank {years}:"))
 userPeriods = int(input(f"Please select a number of compound interest periods per year {periods}:"))
 
