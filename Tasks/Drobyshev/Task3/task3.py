@@ -50,10 +50,16 @@ while True:
         mm = int(mm)
 
         if mm == 0:        
-            if hh == 1 or hh == 21:
+            if hh == 1:
                 print (number_list_0_59[hh].capitalize(), 'час ровно')
-            elif hh >= 2 and hh <= 4 or hh >= 21 and hh <= 23:
+            elif hh == 13:
+                print (number_list_0_59[hh-12].capitalize(), 'час ровно')
+            elif hh >= 2 and hh <= 4:
                 print (number_list_0_59[hh].capitalize(), 'часа ровно')
+            elif hh >= 14 and hh <= 16:
+                print (number_list_0_59[hh-12].capitalize(), 'часа ровно')
+            elif hh >= 17 and hh <= 23:
+                print (number_list_0_59[hh-12].capitalize(), 'часов ровно')
             else: 
                 print (number_list_0_59[hh].capitalize(), 'часов ровно')
 
@@ -141,10 +147,16 @@ while True:
         print(f'{hh:02}:{mm:02}')
 
         if mm == 0:        
-            if hh == 1 or hh == 21:
+            if hh == 1:
                 print (number_list_0_59[hh].capitalize(), 'час ровно')
-            elif hh >= 2 and hh <= 4 or hh >= 21 and hh <= 23:
+            elif hh == 13:
+                print (number_list_0_59[hh-12].capitalize(), 'час ровно')
+            elif hh >= 2 and hh <= 4:
                 print (number_list_0_59[hh].capitalize(), 'часа ровно')
+            elif hh >= 14 and hh <= 16:
+                print (number_list_0_59[hh-12].capitalize(), 'часа ровно')
+            elif hh >= 17 and hh <= 23:
+                print (number_list_0_59[hh-12].capitalize(), 'часов ровно')
             else: 
                 print (number_list_0_59[hh].capitalize(), 'часов ровно')
 
