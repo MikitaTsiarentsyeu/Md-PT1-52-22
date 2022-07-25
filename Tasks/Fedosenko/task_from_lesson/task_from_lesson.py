@@ -11,5 +11,5 @@ for i in range (len(l)-1):
         print (f" sum: {l[i]+l[(i+1)]}")
 
 odd = [l[i] for l[i] in list(l) if  l[i] % 2 !=0 ]
-print(odd)
+
 print(f"The sum  of odd elements is {sum(odd)}")
