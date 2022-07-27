@@ -7,4 +7,4 @@ for a in range (len(а)-1):
     else:
         print (а[a]+а[a+1], end="  ")
 print()
-print(f"Полная сумма всех нечётных чисел = {sum(а for а in а if а%2 !=0)}")
+print(f"The total sum of all odd numbers = {sum(а for а in а if а%2 !=0)}")
