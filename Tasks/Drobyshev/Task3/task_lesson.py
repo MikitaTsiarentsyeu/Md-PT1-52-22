@@ -12,7 +12,7 @@ print(f"The total sum of all odd numbers = {sum(а for а in а if а%2 !=0)}")
 # this solution uses 1 variable
 import math
 "five thirteen two eleven seventeen two one thirteen ten four eight five nineteen"
-a = list(set({'five': 5, 'thirteen': 13, 'two':2, 'eleven': 11, 'seventeen':17, 'one':1, 'ten':10, 'four':4, 'eight':8, 'five':5, 'nineteen':19}.values()))
+a = sorted(list(set({'five': 5, 'thirteen': 13, 'two':2, 'eleven': 11, 'seventeen':17, 'one':1, 'ten':10, 'four':4, 'eight':8, 'five':5, 'nineteen':19}.values())))
 print(a)
 
 if len(a) == 0:
