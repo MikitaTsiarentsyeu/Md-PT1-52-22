@@ -97,7 +97,7 @@ while True:
 
 	sleep(0.2)
 
-	time = [int(i) for i in str(datetime.now()).replace('-','').replace('.',' ').split(' ')[1].split(':')]
+	time = [datetime.now().time().hour, datetime.now().time().minute, datetime.now().time().second]
 	system('cls||clr')
 
 input()
