@@ -44,7 +44,7 @@ while True:
         data_minutes_of_numerals = dictionary_of_numerals.get(minutes_comp)
         data_minutes = dictionary_of_minutes.get(minutes_comp)
 
-        if data_minutes in dictionary_of_minutes.values() and data_hours_of_numerals in dictionary_of_numerals_time.values():
+        if variable == True:
             if minutes_comp == 1:
                 print(
                     f"\n{hour_comp:02d}:{minutes_comp:02d} - {data_minutes} минута {data_hours_of_numerals}.\n")
@@ -106,7 +106,7 @@ while True:
         data_minutes_of_numerals = dictionary_of_numerals.get(minutes)
         data_minutes = dictionary_of_minutes.get(minutes)
 
-        if data_minutes in dictionary_of_minutes.values() and data_hours_of_numerals in dictionary_of_numerals_time.values():
+        if variable == True:
             if minutes == 1:
                 print(
                     f"\n{hour:02d}:{minutes:02d} - {data_minutes} минута {data_hours_of_numerals}.\n")
