@@ -43,8 +43,8 @@ while True:
         data_hours_of_numerals = dictionary_of_numerals_time.get(hour_comp+1)
         data_minutes_of_numerals = dictionary_of_numerals.get(minutes_comp)
         data_minutes = dictionary_of_minutes.get(minutes_comp)
-
-        if variable == True:
+# возникли проблемы с выводом
+        if data_minutes in dictionary_of_minutes.values() and data_hours_of_numerals in dictionary_of_numerals_time.values():
             if minutes_comp == 1:
                 print(
                     f"\n{hour_comp:02d}:{minutes_comp:02d} - {data_minutes} минута {data_hours_of_numerals}.\n")
@@ -54,7 +54,7 @@ while True:
             elif minutes_comp < 10:
                 print(
                     f"\n{hour_comp:02d}:{minutes_comp:02d} - {data_minutes} минут {data_hours_of_numerals}.\n")
-            elif 21 == minutes_comp == 31 == minutes_comp == 41:
+            elif minutes_comp == 21 or minutes_comp == 31 or minutes_comp == 41:
                 print(
                     f"\n{hour_comp:02d}:{minutes_comp} - {data_minutes} минута {data_hours_of_numerals}.\n")
             elif 21 < minutes_comp < 25:
@@ -105,8 +105,8 @@ while True:
         data_hours_of_numerals = dictionary_of_numerals_time.get(hour+1)
         data_minutes_of_numerals = dictionary_of_numerals.get(minutes)
         data_minutes = dictionary_of_minutes.get(minutes)
-
-        if variable == True:
+# возникли проблемы с выводом
+        if data_minutes in dictionary_of_minutes.values() and data_hours_of_numerals in dictionary_of_numerals_time.values():
             if minutes == 1:
                 print(
                     f"\n{hour:02d}:{minutes:02d} - {data_minutes} минута {data_hours_of_numerals}.\n")
@@ -116,7 +116,7 @@ while True:
             elif minutes < 10:
                 print(
                     f"\n{hour:02d}:{minutes:02d} - {data_minutes} минут {data_hours_of_numerals}.\n")
-            elif 21 == minutes == 31 == minutes == 41:
+            elif minutes == 21 or minutes == 31 or minutes == 41:
                 print(
                     f"\n{hour:02d}:{minutes} - {data_minutes} минута {data_hours_of_numerals}.\n")
             elif 21 < minutes < 25:
