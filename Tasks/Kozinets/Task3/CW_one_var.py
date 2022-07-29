@@ -16,14 +16,14 @@ print(f'2), 3) {string} <- no duplicates and sorted from min to max', end = '\n4
 
 #>>>>>>>>>> 4) a*b, b+c, c*d,...
 while True:
-	if string[1] < 100:
+	if len(string) >= 2 and string[1] < 100:
 		print(string[0]*string[1], end = ' ')
 		string.append(string.pop(0)+100)
 	else:
 		string.append(string.pop(0)+100)
 		break
 
-	if string[1] < 100:
+	if len(string) >= 2 and string[1] < 100:
 		print(string[0]+string[1], end = ' ')
 		string.append(string.pop(0)+100)
 	else:
