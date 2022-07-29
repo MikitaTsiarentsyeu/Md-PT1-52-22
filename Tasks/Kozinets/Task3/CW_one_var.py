@@ -18,30 +18,30 @@ print(f'2), 3) {string} <- no duplicates and sorted from min to max', end = '\n4
 while True:
 	if string[1] < 100:
 		print(string[0]*string[1], end = ' ')
-		string.append(string.pop(0)*100)
+		string.append(string.pop(0)+100)
 	else:
-		string.append(string.pop(0)*100)
+		string.append(string.pop(0)+100)
 		break
 
 	if string[1] < 100:
 		print(string[0]+string[1], end = ' ')
-		string.append(string.pop(0)*100)
+		string.append(string.pop(0)+100)
 	else:
-		string.append(string.pop(0)*100)
+		string.append(string.pop(0)+100)
 		break
 
-while string[0] >= 100:
-	string.append(int(string.pop(0)/100))
+while string[0] > 100:
+	string.append(string.pop(0)-100)
 print(' <- 4) a*b, b+c, c*d,... from 2), 3)')
 
 #>>>>>>>>>> 5) sum of odd from 1) 2) 3)
 while string[0] < 100:
 	if string[0] % 2 != 0:
-		string.append(string.pop(0)*100)
+		string.append(string.pop(0)+100)
 	else:
 		del string[0]
 
-while string[0] >= 100:
-	string.append(int(string.pop(0)/100))
+while string[0] > 100:
+	string.append(string.pop(0)-100)
 
 print(f'5)     {sum(string)} <- sum of odd from 2), 3)')
