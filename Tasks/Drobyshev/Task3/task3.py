@@ -37,18 +37,14 @@ while True:
     enter_time = input ('Выберите режим работы программы:\n 1 - текстовый вывод текущего времени \n 2 - текстовый вывод времени, введённого с консоли (hh:mm) \n')
 
     if (enter_time == '1'):
-        dt_obj =datetime.datetime.now()
-        dt_string = dt_obj.strftime("%H:%M")
-        dt_string = list(dt_string)
-        dt_string_1 = dt_string [0:2]
-        dt_string_2 = dt_string [3:]
-        dt_string_3 = dt_string_1 + dt_string_2
-        hh = dt_string_3[0] + dt_string_3[1]
-        mm = dt_string_3[2] + dt_string_3[3]
-        print (hh,":",mm)
-        hh = int(hh)
-        mm = int(mm)
+        time =datetime.datetime.now()
+        time_token = time.strftime("%H:%M")
 
+        print (time_token)
+
+        values = time_token.split(':')
+        hh, mm = values[0], values[1]
+        hh, mm = int(hh), int(mm)
         if mm == 0:        
             if hh == 1:
                 print (number_list_0_59[hh].capitalize(), 'час ровно')
@@ -129,22 +125,30 @@ while True:
     
     elif (enter_time == '2'):
 
-        while True :
-            hh = int(input('Введите время, часы (00-23):\n'))
-            if  hh >= 0 and hh <= 23:                
-                break
-            else:
-                print ("Некорректный ввод. Диапазон должен быть от 0 до 23")
-            
-            
-        while True :
-            mm = int(input('Введите время, минуты (00-59):\n'))
-            if  mm >= 0 and mm <= 59:                
-                break
-            else:
-                print ("Некорректный ввод. Диапазон должен быть от 0 до 59")
+        while True:
+            time_token = input("Пожалуйста введите время в hh:mm формате:\n")
 
-        print(f'{hh:02}:{mm:02}')
+            if len(time_token) != 5:
+                print("Количество символов введено неверно.\nПовторите ввод.")
+                continue
+
+            if time_token[2] != ":":
+                print("Неправильный ввод.\nОтсутствует символ : \nПовторите ввод.")
+                continue
+
+            values = time_token.split(':')
+            hh, mm = values[0], values[1]
+
+            if not (hh.isdigit() and mm.isdigit()):
+                print("Неправильный ввод.\nЗначения должны быть введены цифрами.\nПовторите ввод.")
+                continue
+
+            hh, mm = int(hh), int(mm)
+
+            if hh > 23 or mm > 59:
+                print("Неправильный ввод.\nДиапазон значений часов должен быть от 0 до 23\nДиапазон значений минут должен быть от 0 до 59\nПовторите ввод.")
+                continue
+            break
 
         if mm == 0:        
             if hh == 1:
