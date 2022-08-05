@@ -55,7 +55,7 @@ with open('start_text.txt','r') as st:
 			string = string[:-1][:-string[::-1].index('-')]
 			cursor += len(string)
 		elif string[:-1].count('\n') == 0 and len(string) == str_len + 1 and string[len(string)-2] not in ' -' and  string[len(string)-1] not in ' \n':
-			string = string[:-1][:-string[::-1].index(' ')]
+			string = string[:-1][:-string[::-1].index(' ') + 1]
 			cursor += len(string)
 		elif string[:-1].count('\n') != 0:
 			string = string[:-1][:string.index('\n') + 1]
