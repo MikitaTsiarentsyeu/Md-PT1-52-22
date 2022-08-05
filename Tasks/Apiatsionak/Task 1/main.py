@@ -5,7 +5,7 @@ try:
     a = int(input('Annual - 1 and Monthly - 2''\n'))
     b = decimal.Decimal(input('What amount will you deposit in BYN''\n'))
     c = int(input('How long will you sign the contract in months''\n'))
-    r = decimal.Decimal(input('Enter what interest rate you will have'))
+    r = decimal.Decimal(input('Enter what interest rate you will have''\n'))
     e = r / 100  # This is a part of the amount invested or already paid together with the invested#
     f = c // 12  # This is how many years in 24 months#
     z = int(c % 12)  # How many months without a year#
