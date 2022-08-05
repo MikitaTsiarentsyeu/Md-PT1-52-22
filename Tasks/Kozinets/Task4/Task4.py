@@ -8,7 +8,10 @@ with open('start_text.txt','r') as st:
 	max_word_len = 0
 	string = st.read()
 	for i in range(50,1,-1):
-		if len(re.findall(r'\w{' + str(i) + '}', string)) != 0:
+		if len(re.findall(r'\w{' + str(i) + '}-', string)) != 0 and len(re.findall(r'\w{' + str(i) + '}-', string)[0]) == i + 1:
+			max_word_len = i + 1
+			break
+		elif len(re.findall(r'\w{' + str(i) + '}', string)) != 0 and len(re.findall(r'\w{' + str(i) + '}', string)[0]) == i:
 			max_word_len = i
 			break
 
@@ -51,8 +54,8 @@ with open('start_text.txt','r') as st:
 		st.seek(cursor)
 		string = st.read(str_len + 1)
 
-		if string[:-1].count(' ') == 0 and string[:-1].count('-') != 0:
-			string = string[:-1][:-string[::-1].index('-')]
+		if string[:-1].count(' ') == 0 and string[:-1].count('-') != 0 and string[len(string)-2] != '-' and  string[len(string)-1] != '\n':
+			string = string[:-1][:-string[::-1].index('-') + 1]
 			cursor += len(string)
 		elif string[:-1].count('\n') == 0 and len(string) == str_len + 1 and string[len(string)-2] not in ' -' and  string[len(string)-1] not in ' \n':
 			string = string[:-1][:-string[::-1].index(' ') + 1]
