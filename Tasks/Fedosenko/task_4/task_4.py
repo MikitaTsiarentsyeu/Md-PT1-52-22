@@ -30,5 +30,6 @@ with open(read_file, 'r', encoding='utf-8') as fr, open(write_file, 'w', encodin
                         last_space_index = i + 1
                         break
         fw.write(line)
+print('Please, take a look on formatted text in "new_text.txt" file')        
 fw.close()
 fr.close()
