@@ -74,3 +74,50 @@ else:
 
 
 print(finally_string)    
+
+
+
+hours = {1: "один", 2: "два", 3:"три", 4:"четыре", 5:"пять", 6:"шесть", 7:"семь", 8:"восемь", 9:"девять", 10:"десять", 11:"одиннадцать", 12:"двенадцать"}
+  minutes = {1:"одна", 2:"две", 3:"три", 4:"четыре", 5: "пять", 6: "шесть", 7 : "семь", 8: "восемь", 9: "девять", 10: "десять", 11: "одиннадцать", 12: "двенадцать",  13 : "тринадцать", 14 : "четырнадцать", 15 : "пятнадцать",
+16 : "шестнадцать", 17: "семнадцать", 18: "восемнадцать", 19 : "девятнадцать", 20: "двадцать", 21: "двадцать одна", 22: "двадцать две", 23: "двадцать три", 24 : "двадцать четыре", 25 : "двадцать пять", 26 : "двадцать шесть", 27 : "двадцать семь",
+28 : "двадцать восемь", 29 : "двадцать девять"}
+  hours1 = {1:"первого", 2:"второго", 3:"третьего", 4:"четвертого", 5:"пятого", 6:"шестого", 7:"седьмого", 8:"восьмого", 9:"девятого", 10:"десятого", 11:"одиннадцатого", 12:"двенадцатого"}
+  minutes2 = {1:"одной", 2:"двух", 3:"трех", 4:"четырех", 5:"пяти", 6:"шести", 7:"семи", 8:"восьми", 9:"девяти", 10:"десяти", 11:"одинннадцати", 12:"двенадцати", 13:"тринадцати", 14:"четырнадцати", 15:"пятнадцати"}
+
+if current_time > 12:
+    current_hours == current_hours - 12
+elif current_hours == 0:
+    current_hours = 12
+
+if current_minute == 0 and 1 < current_hours < 5:
+    print(f'(Сейчас:{hours[hour]} часа ровно)')
+elif current_minute == 0 and current__hours >=5:
+    print(f'Сейчас:{hours[hour]} часов ровно')
+elif current_minute == 0 and current_hours == 1:
+    print(f'Сейчас:{hours[hour]} час ровно')
+
+if current_minute == 30 and current_hours != 12:
+    print(f'Сейчас:половина {hours1[current_hours+1]}') 
+elif current_minute == 30 and current_hours == 12:
+    print(f'Сейчас: половина{hours1[current_hours-11]}')   
+
+if current_minute == 1 or current_minute == 21:
+    print(f"Сейчас: name_of_minute_upto30[current_minute]} минута {name_of_hours_ordinal[current_hours+1]})")
+elif 1 < current_minute < 5 or 21 < current_minute < 25:
+    print(f"({current_time_format} - {name_of_minute_upto30[current_minute]} минуты {name_of_hours_ordinal[current_hours+1]})")
+elif 4 < current_minute < 21 or 24 < current_minute <= 29 :
+    print(f"({current_time_format} - {name_of_minute_upto30[current_minute]} минут {name_of_hours_ordinal[current_hours+1]})")
+
+#min > 30 and min < 45
+if current_minute == 31 or current_minute == 41:
+    print(f"({current_time_format} - {name_of_minute_after30[current_minute]} минута {name_of_hours_ordinal[current_hours+1]})")
+elif 31 < current_minute < 35 or 41 < current_minute <= 44:
+    print(f"({current_time_format} - {name_of_minute_after30[current_minute]} минуты {name_of_hours_ordinal[current_hours+1]})")
+elif 34 < current_minute < 41:
+    print(f"({current_time_format} - {name_of_minute_after30[current_minute]} минут {name_of_hours_ordinal[current_hours+1]})")
+
+#min >= 45
+if current_minute == 59:
+    print(f"({current_time_format} - без {name_of_minute_after45[60 - current_minute]} минуты {name_of_hours[current_hours+1]})")
+elif 45 <= current_minute < 60: 
+    print(f"({current_time_format} - без {name_of_minute_after45[60 - current_minute]} минут {name_of_hours[current_hours+1]})")              
