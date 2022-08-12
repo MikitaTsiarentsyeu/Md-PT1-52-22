@@ -1,6 +1,5 @@
-tt = open('text.txt', 'r')
-t = tt.read()
-tt.close()
+with open("text.txt", 'r') as f:
+    t = f.read()
 
 while True:
     n = input('\nEnter the lenght of the string in the text please:\n')
