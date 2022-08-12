@@ -5,7 +5,7 @@ str = 'The quick Brown Fox'
 def check_str(s):
     up = 0
     low = 0
-    s = ''.join(s.split(' '))
+    s = s.replace(' ','')
     for i in range(len(s)):
         if s[i].isupper():
             up += 1
