@@ -76,3 +76,15 @@ print(*('FizzBuzz'[(0,4,4)[x % 3]:4 if x % 5 else 8] or x for x in range(1,101))
 # There is so many simple constructions wich work in difficult logic in this implementation.
 # My implementations look so mediocre now. Bou it's okay I think. =)
 # And fourth my Eanglish much to be desired.
+
+# Implementation 9 (It's my implementation on a basis of prevoios):
+l = []
+s = "FizzBuzz"
+for i in range(1, 101):
+    if i % 3 == 0:
+        l.append(s[0:4 if i % 5 != 0 else 8]) # It's realy usefull aproach.
+    elif i % 5 == 0:
+        l.append(s[4:])
+    else:
+        l.append(i)
+print(*(l))
