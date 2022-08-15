@@ -1,4 +1,4 @@
 print("Hello, world!")
-# input()
+input()
 x = 101
 print(x)
