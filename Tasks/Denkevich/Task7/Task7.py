@@ -32,7 +32,7 @@ def fib(n, a = 0, b = 0, c = 1):
             fib(n-1, a = a, b = a, c = b)
     
 
-fib(7)
+fib(6)
 
 
 # Task 7.2.2 The same with the list:
@@ -50,3 +50,35 @@ def fib(n, a = 0, b = 0, c = 1, l = []):
     
 
 fib(7)
+
+
+# Task 7.2.3 Improving solution with cycle:
+
+
+def fib(n, a = 1, l = [0,1]):
+    if n == 1:
+        return l[0]
+    if a == n - 1:
+        return print(", ".join(map(str, l)))
+    else:
+        for i in range(a, a + 1):
+            l.append(l[i-1] + l[i])
+            return fib(n, a + 1, l = l)
+
+
+fib(8)
+
+
+# Task 7.2.4 It's the best solution I can make at the moment:
+
+
+def fib(n, a = 0, b = 1, l = []):
+    if n == 0:
+        return print(", ".join(map(str, l)))
+    else:
+        b += a
+        l.append(a)
+        return fib(n - 1, a = b, b = a , l = l)
+
+
+fib(9)
