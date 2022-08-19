@@ -47,7 +47,7 @@ def fib_5(n): #the_dich_V2
 print(list_sum(a))
 print(', '.join(list(map(str,fib_1(9)))))
 print(', '.join(fib_2(9)))
-print(fib_3(9))
+print(*fib_3(9), sep = ', ')
 print(fib_4(9))
 print(fib_5(9))
 
