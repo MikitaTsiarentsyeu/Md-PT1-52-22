@@ -94,8 +94,18 @@ def fib(n, a = 0, b = 1):
         return
     else:
         b += a
-        print(a, end = ", " if n > 1 else ".")
+        print(a, end = ", " if n > 1 else ".\n")
         return fib(n-1, a = b, b = a)
 
 
 fib(10)
+
+
+# Task 7.2.5 A bit upgrade2:
+
+
+def fib(n, a = 0, b = 1):
+    b += a
+    print(a, end = ", " if n > 1 else ".\n")
+    return None if n == 1 else fib(n-1, a = b, b = a)
+fib(11)
