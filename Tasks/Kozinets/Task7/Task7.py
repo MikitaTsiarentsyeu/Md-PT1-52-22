@@ -33,13 +33,13 @@ def fib_3(n): #shortest way
 		return [0]
 
 
-def fib_4(n): #the_dich
+def fib_4(n): #heresy(heavy load on the processor (for example try n = 9 and n = 13)) but working
 	if n != 1:
 		return fib_4(n - 1) + [1] if n == 2 else fib_4(n-1) + [fib_4(n-1)[-1] + fib_4(n-1)[-2]]
 	else:
 		return [0]
 
-def fib_5(n): #the_dich_V2
+def fib_5(n): #the same heresy but in one line
 	return fib_5(n-1) + [1] if n == 2 else fib_5(n-1) + [fib_5(n-1)[-1] + fib_5(n-1)[-2]] if n != 1 else [0]
 
 
