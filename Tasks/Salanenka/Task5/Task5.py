@@ -22,12 +22,12 @@ def get_ranges(c):
     s=''
     while len(c)>1:
         if c[1] == c[0]+1:
-            s+=f'{c[0]} - '
+            s=f'{s}{c[0]} - '
             while len(c)>1 and c[1] == c[0]+1:
                 c.pop(0)
-        s+=f'{c.pop(0)}, '
+        s=f'{s}{c.pop(0)}, '
     if len(c)>0:
-        s+=f'{c[0]}'
+        s=f'{s}{c[0]}'
     return s.strip(' ,')
 
 print(get_ranges([0, 1, 2, 3, 4, 7, 8, 10]))  
