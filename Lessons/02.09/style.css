@@ -1,0 +1,18 @@
+p { color: red !important;} 
+
+a:visited { 
+    color: green; 
+    text-decoration: none;
+}
+
+h6 {
+    color: green;
+}
+
+.red {
+    color:tomato;
+}
+
+#myElem {
+    color: cornflowerblue;
+}
