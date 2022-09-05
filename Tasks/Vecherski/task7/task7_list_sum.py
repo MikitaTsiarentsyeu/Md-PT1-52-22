@@ -1,15 +1,9 @@
-def list_sum(l, i=0):
-    if len(l) == 1:
-        if type(l[i]) == list:
-            sum = list_sum(l[i])   
-        else:
-            sum = l[i]
-    elif type(l[i]) == list:
-        sum = list_sum(l[i]) + list_sum(l[i+1:])   
-    else:
-        sum = l[i] + list_sum(l[i+1:])
+def list_sum(l):
+    sum = 0
+    for i in l:
+        sum += list_sum(i) if isinstance(i,list) else i 
     return sum    
 
-l = [1,2,[[3,[4,[[5],6]],[7]],8],9]
+l = [11,2,[[30,[4,[[15],6]],[77]],8],19]
 
 print(list_sum(l))
