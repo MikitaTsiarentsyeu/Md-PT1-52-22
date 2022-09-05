@@ -1,0 +1,66 @@
+p { color: red !important;} 
+
+a:visited { 
+    color: green; 
+    text-decoration: none;
+}
+
+h6 {
+    color: green;
+}
+
+.red {
+    color:tomato;
+}
+
+#myElem {
+    color: cornflowerblue;
+}
+
+body {
+    background-color: brown;
+    color: white;
+}
+
+#headline {
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo {
+    margin-left: 5%;
+}
+
+#login_button {
+    margin-right: 15%;
+    padding-bottom: 5%;
+}
+
+#content {
+    background-color:aquamarine;
+    display: flex;
+}
+
+#content_left {
+    width: 30%;
+    background-color: coral;
+}
+
+#content_center {
+    width: 40%;
+    background-color:darkmagenta;
+}
+
+#content_center {
+    background-color:darkslategray;
+}
+
+#footer {
+    background-color:darkolivegreen;
+    display: flex;
+    justify-content: center;
+}
