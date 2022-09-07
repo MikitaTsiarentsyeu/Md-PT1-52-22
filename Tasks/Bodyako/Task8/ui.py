@@ -40,8 +40,8 @@ def cart_full(res, res2):
     if res == '2':
         bill = (', '.join(map(str,cart)))
         print (f'Your order is:\n{bill}')
-        sum = sum (item)
-        print (f'The total price is: {sum} USD')
+        fsum = sum (item)
+        print (f'The total price is: {fsum} USD')
 
         input ('Thank you!\nPress enter to continue')
 
