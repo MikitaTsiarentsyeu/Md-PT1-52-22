@@ -3,7 +3,7 @@ from django.db import models
 
 class Author(models.Model):
 
-    name = models.CharField(blank=False, max_length=100)
+    name = models.CharField(blank=False, max_length=200)
     email = models.EmailField(blank=False, primary_key=True)
 
 class Post(models.Model):
