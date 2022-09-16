@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>{{ post.title|capfirst }}</h1>
+    <div>
+        <div>
+            <h3>{{ post.subtitle }}</h3>
+            {% if post.image %}
+                <img src="{{ post.image.url }}" width="40%">
+            {% else %}
+                <p>no image was uploaded</p>
+            {% endif %}
+            <p>{{ post.content }}</p>
+            <p>by {{post.author.name }}</p>
+        </div>
+    </div>
+
+{% endblock %}
+   

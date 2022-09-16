@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My bl0g</title>
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+</head>
+<body>
+    <div id="header">
+        <h1>My blog</h1>
+    </div>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="footer">
+        <p>powered by Django</p>
+    </div>
+</body>
+</html>
