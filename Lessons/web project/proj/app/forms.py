@@ -10,3 +10,8 @@ class AddPost(forms.Form):
     image = forms.ImageField()
     post_theme = forms.ChoiceField(choices=Post.POST_THEMES)
 
+class AddPostViaModelForm(forms.ModelForm):
+
+    class Meta:
+        model = Post
+        fields = ('title', 'subtitle', 'content', 'image', 'post_theme')

@@ -3,7 +3,7 @@ from http.client import NOT_FOUND
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Post, Author
-from .forms import AddPost
+from .forms import AddPost, AddPostViaModelForm
 
 # Create your views here.
 def home(request):
@@ -53,10 +53,28 @@ def add_post(request):
             new_post.content = form.cleaned_data['content']
             new_post.image = form.cleaned_data['image']
             new_post.post_theme = form.cleaned_data['post_theme']
-            new_post.author = Author.objects.all()[0]
+            new_post.author = Author.objects.get(email=request.user.email)
             new_post.issued = datetime.now()
 
             new_post.save()
+
+            return redirect('posts')
+
+    return render(request, 'add_post.html', {'form':form})
+
+def add_model_post(request):
+    form = AddPostViaModelForm()
+
+    if request.method == 'POST':
+        form = AddPostViaModelForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            new_post = form.save(commit=False)
+            new_post.author = Author.objects.get(email=request.user.email)
+            new_post.issued = datetime.now()
+
+            new_post.save()
+            form.save_m2m()
 
             return redirect('posts')
 

@@ -8,8 +8,27 @@
     <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
 </head>
 <body>
-    <div id="header">
-        <h1>My blog</h1>
+    <div id="header" style="display: flex;justify-content: space-between;">
+        <div>
+            <h1>My blog</h1>
+        </div>
+        <div style="padding-right: 5%;">
+            {% if user.is_authenticated %}
+                <p>{{ user.get_username }}</p>
+                <a href="{% url 'logout' %}?next={{ request.path }}">
+                    logout
+                </a>
+                {% if perms.app.add_post %}
+                    <a href="{% url 'add_model_post' %}">
+                        add post
+                    </a>
+                {% endif %}
+            {% else %}
+                <a href="{% url 'login' %}?next={{ request.path }}">
+                    login
+                </a>
+            {% endif %}
+        </div>
     </div>
     <div id="content">
         {% block content %}
