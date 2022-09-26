@@ -1,0 +1,273 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boxing & Fitness Gym in Cannon Falls, MN</title>
+    <link rel="stylesheet" href="{% static 'app/css/style.css'%}">
+    <link rel="shortcut icon" href="{% static 'app/img/favicon.ico'%}" type="image/x-icon">
+</head>
+<body>
+    <div class="main">
+        <video preload="auto" autoplay loop muted plays-inline class="back-video">
+            <source src="{% static 'app/img/video.mp4'%}" type="video/mp4">
+        </video>
+        <nav>
+            <a href="{% url 'home'%}">
+            <img src="{% static 'app/img/logo.png'%}" class="logo"></a>
+            <div class="menu">
+            <ul>
+                <li><a href="#popup2">FOR MEN</a></li>
+                <li><a href="#popup3">FOR WOMEN</a></li>
+                <li><a href="#popup4">PRICES</a></li>
+                <li><a href="#popup5">CONTACT US</a></li>
+            </ul>
+            </div>
+        </nav>
+        <div class="content">
+            <h1>Your only limit is you</h1>
+            <a href="#popup">JUST COME</a>
+        </div> 
+        <div class="apple"><a href="https://www.apple.com/app-store/" target="_blank" class="link"><img src="{% static 'app/img/apple.png' %}"></a>
+        </div>
+    </div>
+
+<!-- just come -->
+
+    <div id="popup" class="popup">
+        <a href="#" class="popup_area"></a>
+        <div class="popup_body">
+            <div class="popup_content">
+                <div class="popup_title">SIGN UP FOR THE FIRST TRIAL COURSE</div>
+                <div class="popup_text">
+                    <form action="{% url 'feedback_view'%}" method="POST">
+                        {% csrf_token %}
+                        <p class="name">Name*</p>
+                        <input type="text" name="name" required placeholder="Name" pattern="^[a-zA-Z\s]+$">
+                        <p class="phone">Phone number*</p>
+                        <input type="tel" name="phone" required placeholder="Phone number" pattern="\+?[0-9\s\-\(\)]+"><br>
+                        <input type="submit" value="SIGN UP">
+                        <p class="policy">By signing up, you agree to 
+                            <a href="https://www.privacypolicygenerator.info/live.php?token=4As3w33KMN8a8Jk1ouQBQl7AvTXJJjSb" 
+                            target="_blank" class="link">Privacy Policy </a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- prices -->
+
+    <div id="popup4" class="popup4">
+        <a href="#" class="popup_area4"></a>
+        <div class="popup_body4">
+            <div class="popup_content4">
+                <div class="popup_title4">OUR MEMBERSHIP ADVANTAGES AND PRICING</div>
+                <div class="popup_text4">
+                    <div class="workout">
+                        <div class="w_title">
+                           <p class="p_title">BASIC</p> 
+                        </div>
+                        <div class="price">
+                            <br>
+                            <p class="price1"><span class="pr1"><sup>$</sup></span><span class="pr2">19</span><span class="pr3">/mo</span></p>
+                            <p class="price2">*with annual membership</p>
+                        </div>
+                        <p class="workout_text">One year paid in full </p>
+                        <p class="workout_text2">$400 in Savings!</p>
+                        <p class="workout_text3">Monthly = $29/mo</p>
+                    </div>
+                    <div class="workout">
+                        <div class="w_title">
+                           <p class="p_title">PROFESSIONAL</p> 
+                        </div>
+                        <div class="price">
+                            <br>
+                            <p class="price1"><span class="pr1"><sup>$</sup></span><span class="pr2">49</span><span class="pr3">/mo</span></p>
+                            <p class="price2">*with annual membership</p>
+                        </div>
+                        <p class="workout_text">One year paid in full </p>
+                        <p class="workout_text2">$600 in Savings!</p>
+                        <p class="workout_text3">Monthly = $59/mo</p>
+                    </div>
+                    <div class="workout">
+                        <div class="w_title">
+                           <p class="p_title">ELITE</p> 
+                        </div>
+                        <div class="price">
+                            <br>
+                            <p class="price1"><span class="pr1"><sup>$</sup></span><span class="pr2">89</span><span class="pr3">/mo</span></p>
+                            <p class="price2">*with annual membership</p>
+                        </div>
+                        <p class="workout_text">One year paid in full </p>
+                        <p class="workout_text2">$800 in Savings!</p>
+                        <p class="workout_text3">Monthly = $99/mo</p>
+                    </div>
+                   <p class="w_t1">All gym memberships include unlimited gym use and a FREE water bottle!</p>
+                   <p class="w_t2">With each and every new member, we strive to be the best. If we can't help you out immediately, we will find a 
+                    plan for you that best fits your lifestyle and goals. We are confident we have the best gym in the market and invite 
+                    you to try it out for yourself? We also offer a free 30-day trial for any of our plans. Just reach out and we will be 
+                    happy to get you set up!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- contact us -->
+        
+    <div id="popup5" class="popup5">
+        <a href="#" class="popup_area5"></a>
+        <div class="popup_body5">
+            <div class="popup_content5">
+                <div class="popup_title5">LET US KNOW IF YOU HAVE ANY QUESTIONS</div>
+                <div class="popup_text5">
+                   <div class="social">
+                   <div class="social_logo"><a href="https://www.facebook.com/" target="_blank"><img src="{% static 'app/img/facebook.svg'%}"></div></a> 
+                   <div class="social_logo"><a href="https://twitter.com/" target="_blank"><img src="{% static 'app/img/twitter.svg'%}"></div></a>
+                   <div class="social_logo"><a href="https://www.instagram.com/" target="_blank"><img src="{% static 'app/img/instagram.svg'%}"></div></a>
+                 <br> <br>
+                   <p class="social_title">Contacts</p>
+                   <p class="social_text">(741) 432–2598 <br> mygo@yahoo.com</p><br>
+                   <p class="social_title">Location</p>
+                   <p class="social_text">31200 Clark Valley,<br> Cannon Falls,<br> 
+                    MN 55009–4315</p>
+                   </div>
+                <div class="social">   
+                    <form action="{% url 'feedback_view' %}" method="POST">
+                     {% csrf_token %}
+                    <p class="name">Name*</p>
+                    <input type="text" name="name" required placeholder="Name" pattern="^[a-zA-Z\s]+$">
+                    <p class="phone">Email*</p>
+                    <input type="email" name="email" required placeholder="Email" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$">
+                    <p class="phone">Message*</p>
+                    <textarea class="textarea" name="textarea" required placeholder="Message"></textarea><br>
+                    <input type="submit" value="SUBMIT" class="submit">
+                    </form>
+                </div>
+           
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- for WOMEN -->
+
+<div id="popup3" class="popup3">
+    <a href="#" class="popup_area3"></a>
+    <div class="popup_body3">
+        <div class="popup_content3">
+            <div class="popup_title3">JOIN TO OUR SPECIAL WOMEN'S CLASSES</div>
+            <div class="poup_tetx3">
+                
+                    <div class="w1">
+                    <video controls autoplay muted loop preload="auto" src="{% static 'app/img/w1.mp4'%}" class="video_w1_w6">
+                    </video>
+                    <p class="w_text"> Callanetics</p>
+                    <p class="w_text_2">Callanetics is the ideal form of exercise for anyone who wants to avoid high-impact but tone up all the same.</p>
+                </div>
+                <div class="w1">
+                    <video controls autoplay muted loop preload="auto" src="{% static 'app/img/w2.mp4'%}" class="video_w1_w6">
+                    </video>
+                    <p class="w_text"> Sport Dances</p>
+                    <p class="w_text_2">Let your hair down and lose yourself to music in our high-intensity sport dance classes. <br><br></p>
+                </div>
+                <div class="w1">
+                    <video controls autoplay muted loop preload="auto" src="{% static 'app/img/w3.mp4'%}" class="video_w1_w6">
+                    </video>
+                    <p class="w_text">Cardio Boxing</p>
+                    <p class="w_text_2">Sometimes nothing feels as good as putting on your gloves and kicking the crap out of a boxing bag or a set of pads.</p>
+                </div>
+           
+
+                <div class="w1">
+                    <video controls autoplay muted loop preload="auto" src="{% static 'app/img/w4.mp4'%}" class="video_w1_w6">
+                    </video>
+                    <p class="w_text">Cardio</p>
+                    <p class="w_text_2">A solid cardio workout is the backbone of an effective workout regime, which is why we run cardio classes twice daily. </p>
+                </div>
+                <div class="w1">
+                    <video controls autoplay muted loop preload="auto" src="{% static 'app/img/w5.mp4'%}" class="video_w1_w6">
+                    </video>
+                    <p class="w_text">Press & Back</p>
+                    <p class="w_text_2">There are few better full-body workouts available than our press and back classes. <br> <br></p>
+                </div>
+                <div class="w1">
+                    <video controls autoplay muted loop preload="auto" src="{% static 'app/img/w6.mp4'%}" class="video_w1_w6">
+                    </video>
+                    <p class="w_text">Yoga</p>
+                    <p class="w_text_2">Various styles of yoga combine physical postures, breathing techniques, and meditation or relaxation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- for MEN -->
+<div id="popup2" class="popup2">
+    <a href="#" class="popup_area2"></a>
+    <div class="popup_body2">
+        <div class="popup_content2">
+            <div class="popup_title2">JOIN TO OUR SPECIAL MEN'S CLASSES</div>
+            <div class="poup_tetx2">
+                
+                    <div class="w1">
+                    <video controls autoplay muted loop preload="auto" src="{% static 'app/img/m1.mp4'%}" class="video_w1_w6">
+                    </video>
+                    <p class="w_text">Body Building</p>
+                    <p class="w_text_2">Want to tone, get muscle definition, and feel stronger in your everyday life? Then our body-building classes are made for you.</p>
+                </div>
+                <div class="w1">
+                    <video controls autoplay muted loop preload="auto" src="{% static 'app/img/m2.mp4'%}" class="video_w1_w6">
+                    </video>
+                    <p class="w_text">Lifting</p>
+                    <p class="w_text_2">Lifting is a strength sport consisting of three events: squat, bench press and the deadlift.<br><br></p>
+                </div>
+                <div class="w1">
+                    <video controls autoplay muted loop preload="auto" src="{% static 'app/img/m3.mp4'%}" class="video_w1_w6">
+                    </video>
+                    <p class="w_text">Boxing</p>
+                    <p class="w_text_2">Sometimes nothing feels as good as putting on your gloves and kicking the crap out of a boxing bag or a set of pads.</p>
+                </div>
+           
+
+                <div class="w1">
+                    <video controls autoplay muted loop preload="auto" src="{% static 'app/img/m4.mp4'%}" class="video_w1_w6">
+                    </video>
+                    <p class="w_text">Cardio</p>
+                    <p class="w_text_2">A solid cardio workout is the backbone of an effective workout regime, which is why we run cardio classes twice daily. </p>
+                </div>
+                <div class="w1">
+                    <video controls autoplay muted loop preload="auto" src="{% static 'app/img/m5.mp4'%}" class="video_w1_w6">
+                    </video>
+                    <p class="w_text">Press & Back</p>
+                    <p class="w_text_2">There are few better full-body workouts available than our press and back classes. <br> <br></p>
+                </div>
+                <div class="w1">
+                    <video controls autoplay muted loop preload="auto" src="{% static 'app/img/m6.mp4'%}" class="video_w1_w6">
+                    </video>
+                    <p class="w_text">Callanetics</p>
+                    <p class="w_text_2">Callanetics is the ideal form of exercise for anyone who wants to avoid high-impact but tone up all the same.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- thx -->
+
+<div id="popup6" class="popup6">
+    <a href="#" class="popup_area6"></a>
+    <div class="popup_body6">
+        <div class="popup_content6">
+            <div class="popup_title6"><img src="{% static 'app/img/thx.svg' %}"></div>
+            <div class="popup_text6">Thank you for your request! 
+            <br>We'll call you soon
+        </div>
+        <a href="#"><input type="submit" value="OK" class="ok"></a>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
